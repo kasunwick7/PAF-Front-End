@@ -115,15 +115,25 @@ function validateItemForm()
 	}
 
 	//Stock Quantity
+	var stock_quantity = $("#stock_quantity").val();
 	if ($("#stock_quantity").val().trim() == "")
 	{
 		return "Enter Stock Quantity.";
 	}
+	if ((!$.isNumeric(stock_quantity)))
+	{
+	return "Enter a Numberical Value.";
+	}
 
 	//price
+	var price = $("#price").val();
 	if ($("#price").val().trim() == "")
 	{
 		return "Enter price.";
+	}
+	if ((!$.isNumeric(price)))
+	{
+	return "Enter a Numberical Value.";
 	}
 	
 	//Added date
