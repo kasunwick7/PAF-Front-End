@@ -5,6 +5,7 @@ $(document).on("click", "#btnSave", function(event)
  $("#alertSuccess").hide();
  $("#alertError").text("");
  $("#alertError").hide();
+ 
 // Form validation-------------------
 var status = validateItemForm();
 if (status != true)
@@ -13,6 +14,7 @@ if (status != true)
  $("#alertError").show();
  return;
  }
+
 // If valid------------------------
 var type = ($("#hidProductIDSave").val() == "") ? "POST" : "PUT";
  $.ajax(
