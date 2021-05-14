@@ -6,13 +6,13 @@ $(document).on("click", "#btnSave", function(event)
  $("#alertError").text("");
  $("#alertError").hide();
 // Form validation-------------------
-/*var status = validateItemForm();
+var status = validateItemForm();
 if (status != true)
  {
  $("#alertError").text(status);
  $("#alertError").show();
  return;
- }*/
+ }
 // If valid------------------------
 var type = ($("#hidProductIDSave").val() == "") ? "POST" : "PUT";
  $.ajax(
@@ -91,6 +91,49 @@ $(document).on("click", ".btnRemove", function(event)
         } 
     }); 
 })
+
+function validateItemForm()
+{
+	//Research ID
+	if ($("#research_id").val().trim() == "")
+	{
+		return "Insert Research ID.";
+	}
+
+	//Product Name
+	if ($("#name").val().trim() == "")
+	{
+		return "Enter Product Name.";
+	}
+
+	//Description
+	if ($("#description").val().trim() == "")
+	{
+		return "Enter Description.";
+	}
+
+	//Stock Quantity
+	if ($("#stock_quantity").val().trim() == "")
+	{
+		return "Enter Stock Quantity.";
+	}
+
+	//price
+	if ($("#price").val().trim() == "")
+	{
+		return "Enter price.";
+	}
+	
+	//Added date
+	if ($("#added_date").val().trim() == "")
+	{
+		return "Enter Added date.";
+	}
+
+
+	return true;
+
+}
 
  
 
